@@ -1,0 +1,30 @@
+# Ignore VSCode settings
+.vscode/
+
+# CatBoost training log folder
+catboost_info/
+Models/catboost_info/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+env/
+.venv/
+.pyenv/
+
+# Ignore Jupyter checkpoints
+.ipynb_checkpoints/
+
+
+# Ignore model outputs
+output/
+*.log
+
+# Ignore OS metadata
+.DS_Store
+Thumbs.db
