@@ -22,7 +22,6 @@ env/
 
 
 # Ignore model outputs
-output/
 *.log
 
 # Ignore OS metadata
