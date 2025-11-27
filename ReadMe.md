@@ -33,6 +33,8 @@ This project reflects the practical challenges of churn prediction and early-war
 
 
 
+## Directory Structure
+
 ```
 Start-up-Founder-Retention-Prediction/
 │
@@ -42,29 +44,33 @@ Start-up-Founder-Retention-Prediction/
 │
 ├── preprocessing/
 │   ├── P1_preprocess.py
-│   ├── P2_preprocess.py
+│   ├── P2_preprocess.ipynb
+│   ├── P3_preprocess.ipynb
+│   └── P4_preprocess(adv).ipynb
 │
 ├── EDA/
 │   ├── KnowingData.ipynb
 │   ├── EDA_File_1.ipynb
 │   ├── EDA_File_2.ipynb
 │   ├── EDA_File_3.ipynb
-│   ├── EDA_File_4.ipynb
+│   └── EDA_File_4.ipynb
 │
 ├── models/
-│   ├── MLP_*.py
-│   ├── Lgbm*.py
-│   ├── Xg*.py
-│   ├── Cat*.py
-│   ├── RandomForest*.py
-│   ├── ... (other scripts)
+│   ├── MLP_P1_721.py
+│   ├── Neural_Lgbm_P4.py
+│   ├── Lgbm1_P1_751.py
+│   ├── Lgbm2WithMoreHyperParam_P1_740.py
+│   ├── Cat_P1_738.py
+│   ├── Bayes_MLP_Log_Lgbm_Xgb_Cat_P4.py
+│   ├── AllModels_P2.ipynb
+│   ├── AllModels_P3.ipynb
+│   ├── Stack_P4.ipynb
+│   └── Xg_LgbM_Cat_P1_736.ipynb
 │
 ├── output/
-│   ├── *.csv
-│   
+│   └── *.csv
+```
 
-
----
 
 ## Dataset Summary
 
@@ -122,7 +128,7 @@ Introduces:
 
 ## Preprocessing Pipelines
 
-We built **three major preprocessing strategies**, each with different assumptions and feature transformations.
+We built **Major preprocessing strategies**, each with different assumptions and feature transformations.
 
 ### **1. P1_preprocess.py — Baseline + Essential Feature Engineering**
 Adds engineered metrics:
