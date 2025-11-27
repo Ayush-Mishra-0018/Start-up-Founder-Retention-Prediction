@@ -5,16 +5,13 @@ import seaborn as sns
 import os
 import sys
 
-# -----------------------------------------------------
-# CREATE FOLDER FOR OUTPUTS
-# -----------------------------------------------------
+
+
 OUTPUT_DIR = "../EDA_Output/FourthEDAOutput"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 print("Saving all plots to:", OUTPUT_DIR)
 
-# -----------------------------------------------------
-# SETUP CONSOLE LOGGING
-# -----------------------------------------------------
+
 log_file = f"{OUTPUT_DIR}/EDA_console_output.txt"
 
 class Tee:
@@ -29,7 +26,6 @@ class Tee:
         for f in self.files:
             f.flush()
 
-# Backup original stdout
 original_stdout = sys.stdout
 sys.stdout = Tee(sys.stdout, open(log_file, "w"))
 
@@ -37,9 +33,7 @@ print("Console logging started...")
 print("Log file:", log_file)
 print("-" * 60)
 
-# -----------------------------------------------------
-# LOAD DATA
-# -----------------------------------------------------
+
 sns.set(style="whitegrid")
 plt.rcParams['figure.max_open_warning'] = 50
 
@@ -56,9 +50,8 @@ else:
     print(f"✅ Data Loaded from {DATA_PATH}")
     df = pd.read_csv(DATA_PATH)
 
-    # ==============================================================================
-    # 1. MASTER CORRELATION HEATMAP
-    # ==============================================================================
+   
+   
     print("\n" + "="*60)
     print("      1. MASTER CORRELATION HEATMAP")
     print("="*60)
@@ -84,9 +77,7 @@ else:
     plt.savefig(f"{OUTPUT_DIR}/heatmap_correlation.png", dpi=300, bbox_inches='tight')
     plt.show()
 
-    # ==============================================================================
-    # 2. NUMERICAL FEATURES vs TARGET — BOX PLOTS
-    # ==============================================================================
+  
     print("\n" + "="*60)
     print("      2. NUMERIC FEATURES vs TARGET")
     print("="*60)
@@ -115,9 +106,7 @@ else:
     plt.savefig(f"{OUTPUT_DIR}/boxplots_numeric_vs_target.png", dpi=300, bbox_inches='tight')
     plt.show()
 
-    # ==============================================================================
-    # 3. CATEGORICAL FEATURES vs TARGET — STACKED BAR CHARTS
-    # ==============================================================================
+  
     print("\n" + "="*60)
     print("      3. CATEGORICAL FEATURES vs TARGET")
     print("="*60)
@@ -160,8 +149,6 @@ print("\n" + "="*60)
 print("      FOURTH EDA COMPLETE")
 print("="*60)
 
-# -----------------------------------------------------
-# RESTORE STDOUT
-# -----------------------------------------------------
+
 sys.stdout = original_stdout
 print("Logging finished. Console output saved to:", log_file)

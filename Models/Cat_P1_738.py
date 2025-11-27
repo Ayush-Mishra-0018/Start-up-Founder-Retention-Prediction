@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 
 
-# 1. TRAIN CATBOOST MODEL
+# 1.TRAIN CATBOOST MODEL
 print("--- Training CatBoost Model ---")
 
 cb_clf = cb.CatBoostClassifier(

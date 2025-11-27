@@ -7,16 +7,12 @@ from scipy.stats import chi2_contingency
 import os
 import sys
 
-# -----------------------------------------------------
-# CREATE FOLDER FOR OUTPUTS
-# -----------------------------------------------------
+
 OUTPUT_DIR = "../EDA_Output/ThirdEDAOutput"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 print("Saving all plots to:", OUTPUT_DIR)
 
-# -----------------------------------------------------
-# SETUP CONSOLE LOGGING
-# -----------------------------------------------------
+
 log_file = f"{OUTPUT_DIR}/EDA_console_output.txt"
 
 class Tee:
@@ -38,9 +34,7 @@ print("Console logging started...")
 print("Log file:", log_file)
 print("-" * 60)
 
-# -----------------------------------------------------
-# LOAD DATA
-# -----------------------------------------------------
+
 sns.set(style="whitegrid")
 DATA_PATH = '../data/train.csv'
 
@@ -53,9 +47,7 @@ except FileNotFoundError:
     sys.stdout = original_stdout
     raise
 
-# ==============================================================================
-# PART 1: NUMERICAL DISTRIBUTION & SKEW (The "MRI")
-# ==============================================================================
+
 print("\n" + "="*60)
 print("      PART 1: NUMERICAL DISTRIBUTION & SKEW ANALYSIS")
 print("="*60)
@@ -109,9 +101,6 @@ else:
     print("\nNo heavily skewed columns found (Skewness < 1.0).")
 
 
-# ==============================================================================
-# PART 2: CATEGORICAL PREDICTIVE POWER (Cramer's V)
-# ==============================================================================
 print("\n" + "="*60)
 print("      PART 2: CATEGORICAL FEATURE STRENGTH (CRAMER'S V)")
 print("="*60)
@@ -162,9 +151,7 @@ plt.savefig(f"{OUTPUT_DIR}/cramers_v_barplot.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 
-# ==============================================================================
-# PART 3: MULTIVARIATE INTERACTIONS
-# ==============================================================================
+
 print("\n" + "="*60)
 print("      PART 3: MULTIVARIATE INTERACTIONS & PATTERNS")
 print("="*60)
@@ -216,8 +203,6 @@ print("\n" + "="*60)
 print("      EXTENSIVE EDA COMPLETE")
 print("="*60)
 
-# -----------------------------------------------------
-# RESTORE STDOUT
-# -----------------------------------------------------
+
 sys.stdout = original_stdout
 print("Logging complete. Console output saved to:", log_file)

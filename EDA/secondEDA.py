@@ -6,16 +6,11 @@ import os
 import sys
 from datetime import datetime
 
-# -----------------------------------------------------
-# CREATE FOLDER FOR OUTPUTS
-# -----------------------------------------------------
+
 OUTPUT_DIR = "../EDA_Output/SecondEDAOutput"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 print("Saving all plots to:", OUTPUT_DIR)
 
-# -----------------------------------------------------
-# SETUP CONSOLE LOGGING
-# -----------------------------------------------------
 log_file = f"{OUTPUT_DIR}/EDA_console_output.txt"
 
 class Tee:
@@ -37,9 +32,7 @@ print("Console logging started...")
 print("Log file:", log_file)
 print("-" * 60)
 
-# -----------------------------------------------------
-# LOAD DATA
-# -----------------------------------------------------
+
 df = pd.read_csv('../data/train.csv')
 print("Dataset Loaded. Shape:", df.shape)
 
@@ -50,9 +43,7 @@ plot_df = df.drop(columns=['founder_id'], errors='ignore')
 
 print("Preparing analysis...")
 
-# -----------------------------------------------------
-# A. NUMERICAL VARIABLES ANALYSIS
-# -----------------------------------------------------
+
 num_cols = plot_df.select_dtypes(include=['float64', 'int64']).columns
 print("Numerical Columns:", list(num_cols))
 
@@ -88,9 +79,6 @@ for col in num_cols:
     plt.show()
 
 
-# -----------------------------------------------------
-# B. CATEGORICAL VARIABLES ANALYSIS
-# -----------------------------------------------------
 cat_cols = plot_df.select_dtypes(include=['object']).columns
 cat_cols = [c for c in cat_cols if c != 'retention_status']
 
@@ -116,8 +104,6 @@ for col in cat_cols:
 print("\nAll EDA plots saved successfully!")
 print("Console output saved to:", log_file)
 
-# -----------------------------------------------------
-# STOP LOGGING & RESTORE STDOUT
-# -----------------------------------------------------
+
 sys.stdout = original_stdout
 print("Logging completed.")
