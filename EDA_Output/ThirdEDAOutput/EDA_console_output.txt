@@ -1,0 +1,55 @@
+Console logging started...
+Log file: ../EDA_Output/ThirdEDAOutput/EDA_console_output.txt
+------------------------------------------------------------
+Loading Dataset...
+Data Loaded Successfully. Shape: (59611, 24)
+
+============================================================
+      PART 1: NUMERICAL DISTRIBUTION & SKEW ANALYSIS
+============================================================
+
+DISTRIBUTION HEALTH CHECK:
+                            Skewness  ...                    Recommendation
+funding_rounds_led          0.993528  ...  Moderate Skew (Consider Scaling)
+monthly_revenue_generated   0.799813  ...  Moderate Skew (Consider Scaling)
+years_with_startup          0.788235  ...  Moderate Skew (Consider Scaling)
+num_dependents              0.717575  ...  Moderate Skew (Consider Scaling)
+years_since_founding        0.067646  ...    Normal-ish (StandardScaler ok)
+distance_from_investor_hub  0.029041  ...    Normal-ish (StandardScaler ok)
+founder_age                -0.007497  ...    Normal-ish (StandardScaler ok)
+
+[7 rows x 4 columns]
+
+No heavily skewed columns found (Skewness < 1.0).
+
+============================================================
+      PART 2: CATEGORICAL FEATURE STRENGTH (CRAMER'S V)
+============================================================
+Calculating correlations...
+
+STRENGTH OF ASSOCIATION:
+                            Cramers_V
+startup_stage                0.315670
+personal_status              0.284619
+remote_operations            0.220401
+work_life_balance_rating     0.194166
+startup_reputation           0.113011
+education_background         0.106210
+founder_gender               0.101674
+venture_satisfaction         0.068846
+startup_performance_rating   0.060518
+working_overtime             0.055466
+team_size_category           0.032418
+innovation_support           0.021071
+founder_role                 0.009477
+leadership_scope             0.009342
+founder_visibility           0.004166
+
+============================================================
+      PART 3: MULTIVARIATE INTERACTIONS & PATTERNS
+============================================================
+Generating Pairplot… (may take time)
+
+============================================================
+      EXTENSIVE EDA COMPLETE
+============================================================
