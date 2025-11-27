@@ -1,12 +1,6 @@
 # Best Parameters:
 # {'subsample': 0.8, 'reg_lambda': 0, 'reg_alpha': 0, 'num_leaves': 20, 'min_child_samples': 10, 'max_depth': 6, 'learning_rate': 0.01, 'colsample_bytree': 0.6}
 
-# --- Final Model Training and F1 Optimization ---
-# --- Tuned LGBM F1 Results ---
-# Optimal Threshold: 0.5000
-# Maximized F1 Score (OOF): 0.7348
-
-
 # 0. IMPORT PREPROCESSING + LIBRARIES
 import sys, os
 sys.path.append(os.path.abspath(".."))

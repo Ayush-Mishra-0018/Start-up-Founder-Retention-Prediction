@@ -1,10 +1,9 @@
-
-# 0. IMPORT PREPROCESSING + LIBRARIES
-
-# --- Neural Network Search Complete ---
-# Best AUC Score: 0.8139pytho
+# Best AUC Score: 0.8139
 # Best Hyperparameters:
 # {'mlp__solver': 'adam', 'mlp__learning_rate_init': 0.01, 'mlp__hidden_layer_sizes': (128,), 'mlp__alpha': 0.01, 'mlp__activation': 'tanh'}
+
+
+# 0. IMPORT PREPROCESSING + LIBRARIES
 import sys, os
 sys.path.append(os.path.abspath(".."))
 
