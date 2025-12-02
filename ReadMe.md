@@ -67,6 +67,11 @@ Start-up-Founder-Retention-Prediction/
 │   ├── Stack_P4.ipynb
 │   └── Xg_LgbM_Cat_P1_736.ipynb
 │
+├── twentyPercentData/
+│   └── fulldata.ipynb
+│   └── minidata.ipynb
+│   └── mini_train_data.csv
+│   
 ├── output/
 │   └── *.csv
 ```
